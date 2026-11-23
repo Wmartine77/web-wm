@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Walter Martínez · Compras y Comercio Exterior</title>
+<meta name="description" content="Consultoría en compras y comercio exterior para pymes importadoras de Argentina y Latinoamérica. Comprá mejor. Importá sin sorpresas.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sitio de una sola página; banda azul de portada, luego secciones claras de una columna con grillas que pasan a una columna en el teléfono */
+:root{
+  --bg:#F4F6F7; --surface:#FFFFFF; --fg:#16212B; --muted:#5B6874; --line:#D9E0E5;
+  --navy:#1F3A5F; --teal:#2F7D6D; --teal2:#4FA393; --tint:#E7EEF3; --on-navy:#FFFFFF; --hero-sub:#BFD8D1;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F161D; --surface:#17212B; --fg:#E6ECF0; --muted:#9AA8B4; --line:#2A3743;
+  --navy:#8FB3DD; --teal:#5FC1AB; --teal2:#7FD3C0; --tint:#1D2A36; --on-navy:#0F161D; --hero-sub:#BFD8D1; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F161D; --surface:#17212B; --fg:#E6ECF0; --muted:#9AA8B4; --line:#2A3743;
+  --navy:#8FB3DD; --teal:#5FC1AB; --teal2:#7FD3C0; --tint:#1D2A36; --on-navy:#0F161D; --hero-sub:#BFD8D1; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.in{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,34px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:65ch}
+a{color:inherit}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--teal)}
+.muted{color:var(--muted)}
+section{padding-block:72px}
+section .in{display:flex;flex-direction:column;gap:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;text-decoration:none;border:0;border-radius:6px;padding:12px 20px;cursor:pointer}
+.btn:focus-visible,.chip:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--teal2);outline-offset:2px}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.ghost{border:2px solid currentColor;padding:10px 18px}
+
+/* Portada (fondo fijo azul en ambos temas) */
+.hero{background:#1F3A5F;color:#fff;margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px)}
+.hero nav{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-block:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:800;font-size:18px;line-height:1.1}
+.brand small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.links{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px}
+.links a{text-decoration:none;opacity:.85}
+.links a:hover{opacity:1;text-decoration:underline}
+.hero .copy{padding-block:56px 72px;display:flex;flex-direction:column;gap:20px;position:relative}
+.hero h1{font-size:clamp(36px,6.5vw,64px);font-weight:800;letter-spacing:-.015em;max-width:15ch}
+.hero .sub{font-size:clamp(18px,2.4vw,22px);color:var(--hero-sub);max-width:40ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.hero .btn.primary{background:#2F7D6D}
+.hero .btn.ghost{color:#fff}
+.creds{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:#9FB6CC;margin-top:18px}
+.route{position:absolute;inset:0;pointer-events:none;opacity:.5}
+
+/* Respaldo */
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.stat .n{font-family:var(--display);font-weight:800;font-size:34px;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1}
+.stat .w{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--teal)}
+.stat p{font-size:14.5px;color:var(--muted)}
+.cv{display:flex;flex-wrap:wrap;gap:8px}
+.cv span{background:var(--tint);border-radius:999px;padding:6px 14px;font-size:14px}
+
+/* Servicios */
+.svc-wrap{display:flex;flex-direction:column;gap:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chips .lbl{font-size:14px;color:var(--muted);margin-right:4px}
+.chip{font:inherit;font-family:var(--display);font-weight:700;font-size:15px;color:var(--navy);background:var(--surface);border:2px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.chip .dot{width:9px;height:9px;border-radius:50%;background:var(--sc)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--sc);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc.sel{box-shadow:0 0 0 2px var(--sc)}
+.svc .what{font-size:14px;color:var(--muted);font-weight:600}
+.svc ul{margin:0;padding-left:18px;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.svc .price{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:14px;color:var(--navy)}
+.svc .price.locked{color:var(--muted)}
+.svc .price.locked a{color:var(--teal)}
+.disclaimer{font-size:14px;color:var(--muted);border-left:3px solid var(--teal);padding-left:12px}
+
+/* Pasos */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:8px;padding:22px;background:var(--surface);border-radius:8px;border:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--mono);font-size:13px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:inline-flex;align-items:center;justify-content:center}
+.steps p{font-size:14.5px;color:var(--muted)}
+
+/* Registro */
+.reg-band{background:var(--tint)}
+.reg{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column;gap:18px;max-width:760px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.fields label{display:flex;flex-direction:column;gap:5px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.fields input,.fields textarea{font:inherit;font-weight:400;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;width:100%}
+.fields .full{grid-column:1/-1}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted)}
+.consent input{margin-top:4px;flex:none}
+.err{color:#B3261E;font-size:14px}
+:root[data-theme="dark"] .err{color:#F2B8B5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:#F2B8B5}}
+.ok{background:var(--tint);border-radius:8px;padding:16px 18px;font-size:15px}
+
+/* FAQ y contacto */
+details{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px}
+summary{cursor:pointer;font-weight:600}
+details p{margin-top:10px;color:var(--muted);font-size:15px}
+.faq{display:flex;flex-direction:column;gap:10px;max-width:820px}
+.contact{display:flex;flex-wrap:wrap;gap:12px}
+.contact .btn.ghost{color:var(--navy)}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:13.5px;color:var(--muted)}
+footer .in{display:flex;flex-direction:column;gap:10px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="in">
+    <nav aria-label="Principal">
+      <a class="brand" href="#inicio">
+        <svg width="40" height="40" viewBox="0 0 46 46" aria-hidden="true"><rect x="1" y="1" width="44" height="44" rx="5" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".3"/><path d="M8 14 l4 18 l4.5 -12 l4.5 12 l4 -18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M29 32 v-18 l4.5 9 l4.5 -9 v18" fill="none" stroke="#4FA393" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <span><b>Walter Martínez</b><small>Compras &amp; Comercio Exterior</small></span>
+      </a>
+      <div class="links">
+        <a href="#servicios">Servicios</a><a href="#respaldo">Experiencia</a><a href="#como">Cómo trabajo</a><a href="#registro">Precios</a><a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+    <div class="copy" id="inicio">
+      <svg class="route" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 380 C 200 380, 300 220, 520 240 S 820 60, 1020 40" fill="none" stroke="#2F7D6D" stroke-width="3"/></svg>
+      <h1>Comprá mejor. Importá sin sorpresas.</h1>
+      <p class="sub">Tu área de compras y comercio exterior, sin sumar personal. Consultoría para pymes importadoras de Argentina y Latinoamérica.</p>
+      <div class="cta">
+        <a class="btn primary" href="#registro">Ver precios y servicios</a>
+        <a class="btn ghost" href="#contacto">Coordinar una charla sin cargo</a>
+      </div>
+      <div class="creds"><span>+35 años en compras y comex</span><span>Despachante de Aduanas</span><span>+USD 20 MM en ahorros generados</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="servicios">
+  <div class="in">
+    <div><span class="eyebrow">Servicios</span><h2>Cuatro formas de ayudarte</h2></div>
+    <p class="muted">Elegí uno o varios servicios para armar tu consulta. Los precios se ven al completar el registro.</p>
+    <div class="svc-wrap">
+      <div class="chips" id="chips" role="group" aria-label="Elegí servicios"><span class="lbl">Me interesa:</span></div>
+      <div class="cards" id="cards"></div>
+      <p class="disclaimer" id="disclaimer" hidden>Valores orientativos en dólares, sin impuestos. Armamos paquetes a medida según el volumen y la necesidad de tu empresa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="respaldo" style="background:var(--surface)">
+  <div class="in">
+    <div><span class="eyebrow">Experiencia</span><h2>Ahorros donde nadie los buscó</h2></div>
+    <div class="grid">
+      <div class="stat"><span class="w">Fluvialba</span><span class="n">USD 2 MM</span><p>de ahorro promedio por año durante 11 años de sourcing regional en Argentina, Paraguay y Brasil.</p></div>
+      <div class="stat"><span class="w">Andreani</span><span class="n">USD 2 MM</span><p>de ahorro aduanero e impositivo al aplicar el régimen de Bienes de Capital (Res. 256) en un sorter automatizado.</p></div>
+      <div class="stat"><span class="w">MAREF Group</span><span class="n">USD 1,35 MM</span><p>en ahorros en dos años, armando desde cero el área de Comercio Exterior y desarrollando 50 proveedores nuevos.</p></div>
+      <div class="stat"><span class="w">ZL Chemicals</span><span class="n">USD 8 MM</span><p>por año en un contrato marco (MSA) al desarrollar el mercado latinoamericano de químicos para Oil &amp; Gas.</p></div>
+    </div>
+    <div class="cv"><span>General Electric</span><span>Henkel</span><span>SNF</span><span>Fluvialba</span><span>MAREF</span><span>Andreani</span><span>ZL Chemicals</span><span>Despachante de Aduanas y ATA</span><span>Profesional Acreditado en Compras (PAC)</span><span>Docente IEEC · Fletes y Puertos</span></div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="in">
+    <div><span class="eyebrow">Cómo trabajo</span><h2>De la primera charla a los resultados</h2></div>
+    <ol class="steps">
+      <li><h3>Charla sin cargo</h3><p>30 minutos por videollamada o WhatsApp para entender cómo comprás e importás hoy.</p></li>
+      <li><h3>Diagnóstico</h3><p>Reviso proveedores, costos, Incoterms y posiciones arancelarias, y te entrego las mejoras priorizadas con el ahorro estimado.</p></li>
+      <li><h3>Propuesta a medida</h3><p>Elegís cómo seguir: un proyecto puntual o el abono mensual con tu área tercerizada.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="registro" class="reg-band">
+  <div class="in">
+    <div><span class="eyebrow">Precios</span><h2>Registrate para ver los precios</h2></div>
+    <p class="muted">Completá los datos de tu empresa y vas a ver los valores orientativos de cada servicio. Te contacto dentro de las 48 horas hábiles.</p>
+    <form class="reg" id="reg" novalidate>
+      <div class="fields">
+        <label>Empresa*<input id="f-empresa" name="empresa" required autocomplete="organization"></label>
+        <label>CUIT*<input id="f-cuit" name="cuit" required inputmode="numeric" placeholder="30-12345678-9"></label>
+        <label>Nombre y apellido del contacto*<input id="f-contacto" name="contacto" required autocomplete="name"></label>
+        <label>Cargo<input id="f-cargo" name="cargo" autocomplete="organization-title"></label>
+        <label>WhatsApp*<input id="f-wa" name="whatsapp" required inputmode="tel" autocomplete="tel" placeholder="+54 9 11 1234 5678"></label>
+        <label>Correo*<input id="f-mail" name="email" required type="email" autocomplete="email"></label>
+        <label class="full">¿Qué te gustaría mejorar? (opcional)<textarea id="f-msg" name="mensaje" rows="3"></textarea></label>
+      </div>
+      <label class="consent"><input type="checkbox" id="f-ok" required> <span>Acepto que Walter Martínez use estos datos solo para contactarme por esta consulta, según la <a href="#privacidad">política de privacidad</a>.</span></label>
+      <p class="err" id="f-err" hidden></p>
+      <button class="btn primary" type="submit" id="f-send">Ver precios</button>
+      <p class="ok" id="f-done" hidden></p>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="in">
+    <div><span class="eyebrow">Preguntas frecuentes</span><h2>Lo que más me preguntan</h2></div>
+    <div class="faq">
+      <details><summary>¿Trabajás solo con empresas de Argentina?</summary><p>No. Empiezo por Argentina y también asesoro a pymes de Chile y el resto de Latinoamérica, en forma remota.</p></details>
+      <details><summary>¿Reemplazás al despachante de aduanas?</summary><p>No. Coordino con tu despachante, tu forwarder y tu banco para que la operación salga bien y al menor costo. Si no tenés uno, te ayudo a elegirlo.</p></details>
+      <details><summary>¿Cuánto tarda el diagnóstico?</summary><p>Unas dos semanas desde que recibo la información. Al final te entrego un informe con las mejoras priorizadas y el ahorro estimado.</p></details>
+      <details><summary>¿Los precios son fijos?</summary><p>Son valores orientativos. Cada empresa es distinta, así que armamos paquetes a medida según tu volumen de compras e importaciones.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" style="background:var(--surface)">
+  <div class="in">
+    <div><span class="eyebrow">Contacto</span><h2>Coordinemos una charla sin cargo</h2></div>
+    <div class="contact">
+      <a class="btn primary" href="https://wa.me/5491161645357" target="_blank" rel="noopener">WhatsApp +54 9 11 6164 5357</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/waltermartinez" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="privacidad">
+  <div class="in">
+    <b style="color:var(--fg)">Política de privacidad</b>
+    <p>Los datos que completás en el registro (empresa, CUIT, contacto, cargo, WhatsApp y correo) se usan solo para responder tu consulta y enviarte propuestas de servicio. No se venden ni se comparten con terceros. Podés pedir acceder, corregir o borrar tus datos en cualquier momento escribiendo por WhatsApp, conforme a la Ley 25.326 de Protección de Datos Personales.</p>
+    <p>© 2026 Walter Martínez · Compras &amp; Comercio Exterior · Buenos Aires, Argentina</p>
+  </div>
+</footer>
+
+<script>
+/* Configuración: pegá acá la URL de la aplicación web de Google Apps Script que guarda los registros en tu planilla. Vacía = modo demostración (no guarda nada). */
+const REGISTRO_URL = "https://script.google.com/macros/s/AKfycby9SkLuPNo54lZVICyJuyyA69w6mkZtFihGArGpG87SfwOSLpERToQzSsN-FAvZGRpV/exec";
+
+const servicios=[
+  {id:"clara",nombre:"Compra Clara",color:"#2F7D6D",que:"Diagnóstico y mejora del área de compras",precio:"Diagnóstico express desde USD 300 · 2 semanas",items:["Relevamiento de proveedores, precios y condiciones de pago","Políticas de compra y homologación de proveedores","Informe con mejoras priorizadas y ahorro estimado"]},
+  {id:"ruta",nombre:"Ruta Comex",color:"#1F3A5F",que:"Gestión de importaciones de punta a punta",precio:"Por operación o dentro del abono mensual",items:["Revisión de Incoterms, flete y costos de despacho","Control de posiciones arancelarias (NCM)","Coordinación con despachante, forwarder y banco"]},
+  {id:"origen",nombre:"Origen",color:"#4FA393",que:"Búsqueda y negociación con proveedores del exterior",precio:"Desde USD 800 por proyecto",items:["Nuevos orígenes en Asia o la región","Comparativa de cotizaciones y muestras","Negociación de precio, plazos y forma de pago"]},
+  {id:"ancla",nombre:"Ancla",color:"#5B6874",que:"Abono mensual: tu área de compras y comex tercerizada",precio:"Desde USD 600 por mes",items:["Gestión o supervisión de compras e importaciones","Tablero mensual de costos, plazos y stock","Capacitación al equipo incluida"]}
+];
+const elegidos=new Set();
+let registrado=false;
+try{registrado=localStorage.getItem("wm_registrado")==="1";}catch(e){}
+
+const chips=document.getElementById("chips"),cards=document.getElementById("cards");
+servicios.forEach(s=>{
+  const b=document.createElement("button");
+  b.type="button";b.className="chip";b.id="chip-"+s.id;b.style.setProperty("--sc",s.color);
+  const d=document.createElement("span");d.className="dot";b.appendChild(d);b.appendChild(document.createTextNode(s.nombre));
+  b.addEventListener("click",()=>{elegidos.has(s.id)?elegidos.delete(s.id):elegidos.add(s.id);render();});
+  chips.appendChild(b);
+});
+function render(){
+  cards.textContent="";
+  servicios.forEach(s=>{
+    document.getElementById("chip-"+s.id).setAttribute("aria-pressed",elegidos.has(s.id));
+    const a=document.createElement("article");a.className="svc"+(elegidos.has(s.id)?" sel":"");a.style.setProperty("--sc",s.color);
+    a.innerHTML=`<h3>${s.nombre}</h3><span class="what">${s.que}</span><ul>${s.items.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+    const p=document.createElement("div");
+    if(registrado){p.className="price";p.textContent=s.precio;}
+    else{p.className="price locked";p.innerHTML='🔒 Precio visible al <a href="#registro">registrarte</a>';}
+    a.appendChild(p);cards.appendChild(a);
+  });
+  document.getElementById("disclaimer").hidden=!registrado;
+}
+render();
+
+document.getElementById("reg").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const cuit=v("f-cuit").replace(/\D/g,"");
+  const err=document.getElementById("f-err");
+  let msg="";
+  if(!v("f-empresa"))msg="Completá el nombre de la empresa.";
+  else if(cuit.length!==11)msg="El CUIT tiene que tener 11 números.";
+  else if(!v("f-contacto"))msg="Completá el nombre del contacto.";
+  else if(v("f-wa").replace(/\D/g,"").length<8)msg="Revisá el número de WhatsApp.";
+  else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("f-mail")))msg="Revisá el correo.";
+  else if(!document.getElementById("f-ok").checked)msg="Necesitamos tu consentimiento para guardar los datos.";
+  err.textContent=msg;err.hidden=!msg;
+  if(msg)return;
+  const btn=document.getElementById("f-send");btn.disabled=true;btn.textContent="Enviando…";
+  const datos={empresa:v("f-empresa"),cuit:cuit,contacto:v("f-contacto"),cargo:v("f-cargo"),whatsapp:v("f-wa"),email:v("f-mail"),mensaje:v("f-msg"),servicios:[...elegidos].map(id=>servicios.find(s=>s.id===id).nombre).join(", ")};
+  let guardado=false;
+  if(REGISTRO_URL){
+    try{await fetch(REGISTRO_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(datos)});guardado=true;}
+    catch(x){err.textContent="No pudimos enviar el registro. Probá de nuevo o escribinos por WhatsApp.";err.hidden=false;btn.disabled=false;btn.textContent="Ver precios";return;}
+  }
+  registrado=true;
+  try{localStorage.setItem("wm_registrado","1");}catch(x){}
+  btn.hidden=true;
+  const done=document.getElementById("f-done");done.hidden=false;
+  done.textContent=(guardado?"¡Gracias, "+datos.contacto+"! Recibimos tus datos y te contactamos dentro de las 48 horas hábiles. ":"Modo demostración: los datos no se guardaron. ")+"Ya podés ver los precios en la sección Servicios.";
+  render();
+  document.getElementById("servicios").scrollIntoView();
+});
+</script>
+</body>
+</html>
